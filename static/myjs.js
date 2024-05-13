@@ -39,7 +39,7 @@ function get_posts(username) {
             let time_before = time2str(time_post);
             let class_heart = post['heart_by_me'] ? 'fa-heart' : 'fa-heart-o'
             let class_star = post['star_by_me'] ? 'fa-star' : 'fa-star-o'
-            let class_thumbsup = post['thumbsup_by_me'] ? 'fa-thumbsup' : 'fa-thumbs-o-up'
+            let class_thumbsup = post['thumbsup_by_me'] ? 'fa-thumbs-up' : 'fa-thumbs-o-up'
             let html_temp = `<div class="box" id="${post["_id"]}">
                                     <article class="media">
                                         <div class="media-left">
@@ -231,7 +231,7 @@ function get_posts(username) {
     let $a_like = $(`#${post_id} a[aria-label='thumbsup']`);
     let $i_like = $a_like.find("i");
 
-    if ($i_like.hasClass("fa-thumbsup")) {
+    if ($i_like.hasClass("fa-thumbs-up")) {
       $.ajax({
         type: "POST",
         url: "/update_like",
